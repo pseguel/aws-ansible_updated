@@ -24,7 +24,7 @@
   connection: local
   tasks:
 
-  - name: Create the VPC in AWS {{ aws_region }}
+  - name: Create the VPC in AWS "{{ aws_region }}"
     ec2_vpc_net:
       state: present
       name: "VPC {{ attendee }}"
