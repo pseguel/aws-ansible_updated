@@ -24,7 +24,8 @@
   connection: local
   tasks:
 
-  - ec2_instance_facts:
+  - name: Get Instance metadada 
+  ec2_instance_facts:
     region: "{{ aws_region }}"
     filters:
       "tag:Name": "{{ instance_name }}"
