@@ -25,12 +25,13 @@
   tasks:
 
   - name: Get Instance metadada 
-  ec2_instance_facts:
-    region: "{{ aws_region }}"
-    filters:
-      "tag:Name": "{{ instance_name }}"
+    ec2_instance_facts:
+      region: "{{ aws_region }}"
+      filters:
+        "tag:Name": "{{ instance_name }}"
     register: ec2_metadata
-
+  - debug: var=ec2
+  
   - name: Deleting an AWS Instance
     ec2:
       instance_tags:
